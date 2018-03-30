@@ -1,0 +1,23 @@
+#~~~~~~~~~~| SOURCES |~~~~~~~~~~#
+COMMON_PATH					= ../common_file/
+
+COREWAR_SRC_NAME			= main.c cmd_parse.c cmd_parse_player.c quit.c \
+							init_game.c play_game.c cycle.c instruction_1.c \
+							instruction_2.c instruction_3.c instruction_4.c \
+							registers.c memory.c get_param_info.c \
+							manage_byte_nb.c process.c instruction.c
+COREWAR_SRC_DIR				= srcs/
+COREWAR_SRC					= $(addprefix $(COREWAR_SRC_DIR),$(COREWAR_SRC_NAME)) $(COMMON_PATH)$(COREWAR_SRC_DIR)op.c
+
+COREWAR_OBJ_NAME			= $(COREWAR_SRC_NAME:.c=.o)
+COREWAR_OBJ_DIR				= objs/
+COREWAR_OBJ					= $(addprefix $(COREWAR_OBJ_DIR),$(COREWAR_OBJ_NAME)) $(COMMON_PATH)$(COREWAR_OBJ_DIR)op.o
+
+
+COREWAR_HEADER_NAME			= corewar.h
+COREWAR_HEADER_DIR			= includes/
+COREWAR_HEADER				= $(addprefix $(COREWAR_HEADER_DIR),$(COREWAR_HEADER_NAME)) $(COMMON_PATH)$(COREWAR_HEADER_DIR)op.h 
+
+#~~~~~~~~~~~~| NAME |~~~~~~~~~~~#
+COREWAR_NAME				= corewar
+COREWAR_DIR					= corewar_dir/

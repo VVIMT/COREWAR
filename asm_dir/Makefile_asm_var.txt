@@ -1,0 +1,21 @@
+#~~~~~~~~~~| SOURCES |~~~~~~~~~~#
+COMMON_PATH				= ../common_file/
+
+ASM_SRC_NAME			= main.c get_header.c parse.c write_output.c quit.c \
+						get_header_string.c label.c bin_buff.c instruction.c \
+						is_param.c
+ASM_SRC_DIR				= srcs/
+ASM_SRC					= $(addprefix $(ASM_SRC_DIR),$(ASM_SRC_NAME)) $(COMMON_PATH)$(ASM_SRC_DIR)op.c
+
+ASM_OBJ_NAME			= $(ASM_SRC_NAME:.c=.o)
+ASM_OBJ_DIR				= objs/
+ASM_OBJ					= $(addprefix $(ASM_OBJ_DIR),$(ASM_OBJ_NAME)) $(COMMON_PATH)$(ASM_OBJ_DIR)op.o
+
+
+ASM_HEADER_NAME			= asm.h
+ASM_HEADER_DIR			= includes/
+ASM_HEADER				= $(addprefix $(ASM_HEADER_DIR),$(ASM_HEADER_NAME)) $(COMMON_PATH)$(ASM_HEADER_DIR)op.h 
+
+#~~~~~~~~~~~~| NAME |~~~~~~~~~~~#
+ASM_NAME				= asm
+ASM_DIR					= asm_dir/
